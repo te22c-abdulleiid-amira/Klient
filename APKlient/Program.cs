@@ -9,7 +9,10 @@ HttpResponseMessage response = client.GetAsync("digimon/angemon").Result;
 
 string angemon = response.Content.ReadAsStringAsync().Result;
 
-digimon p = JsonSerializer.Deserialize<digimon>(response.Content.ReadAsStringAsync().Result);
+digimon d = JsonSerializer.Deserialize<digimon>(response.Content.ReadAsStringAsync().Result);
+
+Console.WriteLine(d.name);
+Console.WriteLine(d.id);
 
 // File.WriteAllText("angemon.json", angemon);
 
